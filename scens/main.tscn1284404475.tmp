@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=3 uid="uid://c411361n6u383"]
+
+[ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_gfg0w"]
+[ext_resource type="Script" uid="uid://datxejm6u05l1" path="res://scens/main.gd" id="1_s382v"]
+[ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="2_stwvi"]
+[ext_resource type="Texture2D" uid="uid://kyrj3wp40mu3" path="res://icon.svg" id="3_stwvi"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_stwvi"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_s382v"]
+sky_material = SubResource("ProceduralSkyMaterial_stwvi")
+
+[sub_resource type="Environment" id="Environment_4gohe"]
+background_mode = 2
+sky = SubResource("Sky_s382v")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s382v"]
+albedo_texture = ExtResource("3_stwvi")
+
+[sub_resource type="BoxMesh" id="BoxMesh_4gohe"]
+size = Vector3(100, 1, 100)
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_s382v")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4gohe")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+
+[node name="XRControllerLeft" type="XRController3D" parent="XROrigin3D"]
+tracker = &"left_hand"
+
+[node name="LeftHand" parent="XROrigin3D/XRControllerLeft" instance=ExtResource("1_gfg0w")]
+
+[node name="XRControllerRight" type="XRController3D" parent="XROrigin3D"]
+tracker = &"right_hand"
+
+[node name="RightHand" parent="XROrigin3D/XRControllerRight" instance=ExtResource("2_stwvi")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.656261, 0)
+material_override = SubResource("StandardMaterial3D_s382v")
+mesh = SubResource("BoxMesh_4gohe")

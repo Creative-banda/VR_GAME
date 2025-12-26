@@ -1,0 +1,39 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://sdewklu0ahuo"
+path.s3tc="res://.godot/imported/machine_3_e8d14cb91e35c26e8e6cb19440ef0daa.jpg-4eebf59fed2da01c313ce4ffde8b6f6f.s3tc.ctex"
+path.etc2="res://.godot/imported/machine_3_e8d14cb91e35c26e8e6cb19440ef0daa.jpg-4eebf59fed2da01c313ce4ffde8b6f6f.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "c4e7a5de84e3ac657482a10ac12f9415"
+}
+
+[deps]
+
+source_file="res://assets/machine_3/machine_3_e8d14cb91e35c26e8e6cb19440ef0daa.jpg"
+dest_files=["res://.godot/imported/machine_3_e8d14cb91e35c26e8e6cb19440ef0daa.jpg-4eebf59fed2da01c313ce4ffde8b6f6f.s3tc.ctex", "res://.godot/imported/machine_3_e8d14cb91e35c26e8e6cb19440ef0daa.jpg-4eebf59fed2da01c313ce4ffde8b6f6f.etc2.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

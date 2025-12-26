@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://c411361n6u383"]
+
+[ext_resource type="Script" uid="uid://datxejm6u05l1" path="res://scens/main.gd" id="1_s382v"]
+[ext_resource type="Texture2D" uid="uid://qjlm4dtqv0yl" path="res://assets/hdri.png" id="2_3ioej"]
+[ext_resource type="PackedScene" uid="uid://dwpd1uvyy52id" path="res://scens/xr_origin_3d.tscn" id="2_s382v"]
+[ext_resource type="PackedScene" uid="uid://b3f3irgygunn7" path="res://diy_lab.tscn" id="4_s382v"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_r0j7t"]
+panorama = ExtResource("2_3ioej")
+
+[sub_resource type="Sky" id="Sky_s382v"]
+sky_material = SubResource("PanoramaSkyMaterial_r0j7t")
+
+[sub_resource type="Environment" id="Environment_4gohe"]
+background_mode = 2
+sky = SubResource("Sky_s382v")
+sky_rotation = Vector3(0, 1.35263, 0)
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_s382v")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 2.76484, 0)
+visible = false
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4gohe")
+
+[node name="XROrigin3D" parent="." instance=ExtResource("2_s382v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0379062, 1.3257, -0.936204)
+
+[node name="DIY_LAB_V2" parent="." instance=ExtResource("4_s382v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00736392, 0.00207567, 0.0036993)

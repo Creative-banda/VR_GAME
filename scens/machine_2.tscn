@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2ehkrdyh1a46"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_g6o18"]
+[ext_resource type="PackedScene" uid="uid://mb008awgdg8e" path="res://assets/machine_2/machine_2.glb" id="2_i01fo"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="3_i01fo"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="4_260jp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_260jp"]
+size = Vector3(0.569031, 0.342087, 0.350662)
+
+[node name="PickableObject" instance=ExtResource("1_g6o18")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00802612, 0.173409, 0.00514984)
+shape = SubResource("BoxShape3D_260jp")
+
+[node name="machine_2" parent="." index="1" instance=ExtResource("2_i01fo")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+
+[node name="GrabPointHandRight" parent="." index="2" instance=ExtResource("3_i01fo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.295871, 0.0493434, -0.0698383)
+
+[node name="GrabPointHandLeft" parent="." index="3" instance=ExtResource("4_260jp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.249026, 0.101989, -0.0300626)
