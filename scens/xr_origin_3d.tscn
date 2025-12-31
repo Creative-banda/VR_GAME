@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dwpd1uvyy52id"]
+[gd_scene load_steps=11 format=3 uid="uid://dwpd1uvyy52id"]
 
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_x2vy5"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_vdbvr"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_kqfn1"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="5_oo6or"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_dj7xj"]
-[ext_resource type="PackedScene" uid="uid://c2q5phg8w08o" path="res://addons/godot-xr-tools/functions/movement_jump.tscn" id="7_fgi4x"]
 [ext_resource type="Script" uid="uid://bk3fhb3gdfa7f" path="res://addons/godot-xr-tools/overrides/ground_physics_settings.gd" id="7_klsgq"]
 
 [sub_resource type="Resource" id="Resource_vdbvr"]
@@ -38,12 +37,12 @@ max_speed = 2.5
 
 [node name="FunctionPickup" parent="XRControllerLeft" instance=ExtResource("3_fgi4x")]
 
-[node name="MovementCrouch" parent="XRControllerLeft" instance=ExtResource("4_x2vy5")]
-crouch_height = 1.3
-crouch_button_action = "by_button"
-crouch_type = 1
-
 [node name="FunctionPointer" parent="XRControllerLeft" instance=ExtResource("5_oo6or")]
+distance = 1.0
+active_button_action = "trigger"
+show_laser = 2
+laser_length = 1
+show_target = true
 
 [node name="XRControllerRight" type="XRController3D" parent="."]
 tracker = &"right_hand"
@@ -55,10 +54,15 @@ turn_mode = 1
 
 [node name="FunctionPickup" parent="XRControllerRight" instance=ExtResource("3_fgi4x")]
 
-[node name="MovementJump" parent="XRControllerRight" instance=ExtResource("7_fgi4x")]
-jump_button_action = "ax_button"
-
 [node name="FunctionPointer" parent="XRControllerRight" instance=ExtResource("5_oo6or")]
+distance = 1.0
+active_button_action = "trigger"
+show_laser = 2
+laser_length = 1
+show_target = true
+
+[node name="MovementCrouch" parent="XRControllerRight" instance=ExtResource("4_x2vy5")]
+crouch_button_action = "ax_button"
 
 [node name="PlayerBody" parent="." instance=ExtResource("6_dj7xj")]
 physics = SubResource("Resource_vdbvr")

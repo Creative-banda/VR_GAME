@@ -14,7 +14,7 @@ sky_material = SubResource("PanoramaSkyMaterial_r0j7t")
 [sub_resource type="Environment" id="Environment_4gohe"]
 background_mode = 2
 sky = SubResource("Sky_s382v")
-sky_rotation = Vector3(0, 1.35263, 0)
+sky_rotation = Vector3(0, -1.55334, 0)
 tonemap_mode = 2
 glow_enabled = true
 

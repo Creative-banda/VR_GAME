@@ -2,7 +2,6 @@
 class_name XRToolsPickable
 extends RigidBody3D
 
-
 ## XR Tools Pickable Object
 ##
 ## This script allows a [RigidBody3D] to be picked up by an
@@ -437,3 +436,30 @@ func _get_grab_point(grabber : Node3D, current : XRToolsGrabPoint) -> XRToolsGra
 func _set_ranged_grab_method(new_value: int) -> void:
 	ranged_grab_method = new_value
 	can_ranged_grab = new_value != RangedMethod.NONE
+
+
+func pointer_event(event: XRToolsPointerEvent):
+	# event.pointer is the FunctionPointer node
+	# Usually, the parent of the FunctionPointer is the XRController3D
+	var controller : XRController3D = event.pointer.get_parent()
+	
+	# 2. To check for a SPECIFIC button (e.g., Grip or AX) 
+	# even if it's not the pointer's main action:
+	if controller and controller.is_button_pressed("trigger_click"):
+		run_my_special_function()
+
+
+func run_my_special_function():
+	if $AnimationPlayer.is_playing():
+		return
+	$AnimationPlayer.play("machine_on")
+
+func start_jig_saw_audio():
+	$start.play()
+
+func _on_start_finished() -> void:
+	$mid.play()
+
+func end_audio():
+	$mid.stop()
+	$end.play()

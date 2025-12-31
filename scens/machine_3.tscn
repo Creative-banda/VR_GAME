@@ -1,8 +1,12 @@
-[gd_scene load_steps=27 format=4 uid="uid://clu7fwbg0e7w0"]
+[gd_scene load_steps=33 format=4 uid="uid://clu7fwbg0e7w0"]
 
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_fjrgs"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="3_llosb"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="4_1ut7m"]
+[ext_resource type="AudioStream" uid="uid://di12e83trg3gv" path="res://assets/JIGSAW/jigsaw_machine_audio/1.mp3" id="4_llosb"]
+[ext_resource type="AudioStream" uid="uid://boyf7wsm1tw6f" path="res://assets/JIGSAW/jigsaw_machine_audio/2.mp3" id="5_1ut7m"]
+[ext_resource type="AudioStream" uid="uid://cfft5ql4wlbci" path="res://assets/JIGSAW/jigsaw_machine_audio/3.mp3" id="6_58u4y"]
+[ext_resource type="Texture2D" uid="uid://cu2jmf861fwcr" path="res://assets/machine_3/white_wood.png" id="7_cxm0j"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fjrgs"]
 size = Vector3(0.457817, 0.334229, 0.410873)
@@ -271,22 +275,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_kurbq")
 
-[sub_resource type="Animation" id="Animation_4gkah"]
-resource_name = "machine_on"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("jigsaw_machine_edited/NEEDLE:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_llosb"]
 length = 0.001
 tracks/0/type = "value"
@@ -301,6 +289,183 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Plane1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.134083, 0.227253, -0.097876)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Plane1:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Plane2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.134083, 0.227253, -0.0430147)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Plane2:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Plane2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Plane1:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_4gkah"]
+resource_name = "machine_on"
+length = 11.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("jigsaw_machine_edited/NEEDLE:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.433333, 0, 0.0666667, 0.133333, 0.2, 0.333333, 0.433333, 0.533333, 0.633333, 0.697704, 0.764371, 0.831037, 0.897704, 0.964371, 1.03104, 1.13104, 1.23104, 1.33104, 1.40471, 1.47138, 1.60471, 1.67138, 1.73804, 1.83804, 1.93804, 2.03804, 2.11404, 2.18071, 2.24738, 2.31404, 2.38071, 2.44738, 2.54738, 2.64738, 2.74738, 2.83333, 2.86667, 2.9, 2.96667, 3.03333, 3.1, 3.16667, 3.26667, 3.36667, 3.46667, 3.53333, 3.6, 3.66667, 3.73333, 3.8, 3.86667, 3.96667, 4.06667, 4.16667, 4.26667, 4.33333, 4.4, 4.53333, 4.6, 4.7, 4.8, 4.9, 4.96667, 5.03333, 5.1, 5.16667, 5.23333, 5.3, 5.4, 5.5, 5.6, 5.64305, 5.74305, 5.84305, 5.90742, 5.97409, 6.04076, 6.10742, 6.17409, 6.24076, 6.34075, 6.44075, 6.54076, 6.61443, 6.6811, 6.74776, 6.81443, 6.88109, 6.94776, 7.04776, 7.14776, 7.24776, 7.32376, 7.39043, 7.45709, 7.52376, 7.59043, 7.65709, 7.75709, 7.85709, 7.95709, 8.04305, 8.10972, 8.13333, 8.17638, 8.24305, 8.30972, 8.37638, 8.47639, 8.57638, 8.67638, 8.74305, 8.80972, 8.87638, 8.94305, 9.00972, 9.07638, 9.17638, 9.27638, 9.37638, 9.47639, 9.54305, 9.60972, 9.67638, 9.74305, 9.80972, 9.90972),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.007, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, -0.02, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.015, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0), Vector3(0, 0.007, 0), Vector3(0, -0.02, 0), Vector3(0, -0.015, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 9.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"start_jig_saw_audio"
+}, {
+"args": [],
+"method": &"end_audio"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Plane1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.798378, 1.35949, 1.94337, 2.43333, 8.74976, 10.0667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.290871, 0.0431992, 0.185096), Vector3(0.16497, 0.234464, 0.0951312), Vector3(0.0895058, 0.218239, 0.0443977), Vector3(0.25212, 0.223002, -0.0656512), Vector3(0.134, 0.227, -0.158), Vector3(0.044, 0.227, -0.138), Vector3(0.0654003, 0.153666, -0.396644)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Plane1:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2.41666, 8.74759, 10.0667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(-1.27135, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Plane2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.35204, 1.94337, 2.41666, 8.74976, 10.0667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.291283, 0.0442298, 0.331522), Vector3(0.164, 0.235, 0.24), Vector3(0.09, 0.218, 0.18), Vector3(0.252861, 0.222999, 0.0755779), Vector3(0.134, 0.227, -0.008), Vector3(0.044, 0.227, 0.012), Vector3(0.0725924, 0.0829361, 0.280045)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Plane2:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.35204, 2.41666, 8.74759, 10.0667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(1.46126, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Plane2:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 10.5323),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Plane1:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 10.5323),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1ut7m"]
 _data = {
@@ -308,7 +473,18 @@ _data = {
 &"machine_on": SubResource("Animation_4gkah")
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fs1dv"]
+albedo_texture = ExtResource("7_cxm0j")
+uv1_scale = Vector3(20, 20, 20)
+uv1_offset = Vector3(1.105, 0.23, -2.955)
+uv1_triplanar_sharpness = 90.5096
+
+[sub_resource type="BoxMesh" id="BoxMesh_ionc4"]
+size = Vector3(0.09, 0.005, 0.055)
+
 [node name="PickableObject" instance=ExtResource("1_fjrgs")]
+collision_layer = 1048580
+collision_mask = 1048581
 
 [node name="CollisionShape3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0125848, 0.165161, -0.0170211)
@@ -357,3 +533,30 @@ skeleton = NodePath("")
 libraries = {
 &"": SubResource("AnimationLibrary_1ut7m")
 }
+
+[node name="start" type="AudioStreamPlayer3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0762922, 0.248904, -0.0750157)
+stream = ExtResource("4_llosb")
+
+[node name="mid" type="AudioStreamPlayer3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0762922, 0.248904, -0.0750157)
+stream = ExtResource("5_1ut7m")
+parameters/looping = true
+
+[node name="end" type="AudioStreamPlayer3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0762922, 0.248904, -0.0750157)
+stream = ExtResource("6_58u4y")
+
+[node name="Plane1" type="MeshInstance3D" parent="." index="8"]
+transform = Transform3D(2.71, 0, 0, 0, 2.71, 0, 0, 0, 2.71, 0.134083, 0.227253, -0.097876)
+visible = false
+material_override = SubResource("StandardMaterial3D_fs1dv")
+mesh = SubResource("BoxMesh_ionc4")
+
+[node name="Plane2" type="MeshInstance3D" parent="." index="9"]
+transform = Transform3D(2.71, 0, 0, 0, 2.71, 0, 0, 0, 2.71, 0.134083, 0.227253, -0.0430147)
+material_override = SubResource("StandardMaterial3D_fs1dv")
+mesh = SubResource("BoxMesh_ionc4")
+
+[connection signal="highlight_updated" from="." to="." method="_on_highlight_updated"]
+[connection signal="finished" from="start" to="." method="_on_start_finished"]

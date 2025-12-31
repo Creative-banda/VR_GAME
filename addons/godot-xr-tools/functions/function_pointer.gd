@@ -420,6 +420,7 @@ func _button_pressed() -> void:
 		target = $RayCast.get_collider()
 		last_collided_at = $RayCast.get_collision_point()
 		XRToolsPointerEvent.pressed(self, target, last_collided_at)
+		print(target)
 
 
 # Pointer-activation button released handler
