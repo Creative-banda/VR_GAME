@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://clu7fwbg0e7w0"]
+[gd_scene load_steps=41 format=4 uid="uid://clu7fwbg0e7w0"]
 
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_fjrgs"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="3_llosb"]
@@ -6,10 +6,12 @@
 [ext_resource type="AudioStream" uid="uid://di12e83trg3gv" path="res://assets/JIGSAW/jigsaw_machine_audio/1.mp3" id="4_llosb"]
 [ext_resource type="AudioStream" uid="uid://boyf7wsm1tw6f" path="res://assets/JIGSAW/jigsaw_machine_audio/2.mp3" id="5_1ut7m"]
 [ext_resource type="AudioStream" uid="uid://cfft5ql4wlbci" path="res://assets/JIGSAW/jigsaw_machine_audio/3.mp3" id="6_58u4y"]
-[ext_resource type="Texture2D" uid="uid://cu2jmf861fwcr" path="res://assets/machine_3/white_wood.png" id="7_cxm0j"]
+[ext_resource type="Texture2D" uid="uid://b2e6if8hg0pgw" path="res://assets/wooden_plane/PLANE_c13_wood_05_diff.jpg" id="7_ionc4"]
+[ext_resource type="Texture2D" uid="uid://cjkerud6xlisg" path="res://assets/wooden_plane/PLANE_c13_wood_05_rough.png" id="8_f6o21"]
+[ext_resource type="Texture2D" uid="uid://cagcsy0ncqfn6" path="res://assets/wooden_plane/PLANE_c13_wood_05_norm.jpg" id="9_4e7wx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fjrgs"]
-size = Vector3(0.457817, 0.334229, 0.410873)
+size = Vector3(0.514357, 0.334229, 0.448543)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s816s"]
 resource_name = "black_part"
@@ -292,43 +294,43 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Plane1:position")
+tracks/1/path = NodePath("PLANE:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.134083, 0.227253, -0.097876)]
+"values": [Vector3(0.254271, 0.225364, -0.0702562)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Plane1:rotation")
+tracks/2/path = NodePath("PLANE:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 0)]
+"values": [Vector3(0, 1.5708, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Plane2:position")
+tracks/3/path = NodePath("PLANE/plane_middle:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.134083, 0.227253, -0.0430147)]
+"values": [Vector3(0.000371367, 0, 0)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Plane2:rotation")
+tracks/4/path = NodePath("PLANE/plane_middle:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -340,22 +342,70 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Plane2:visible")
+tracks/5/path = NodePath("PLANE/plane_middle:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Vector3(0.00913121, 0.0371422, 1.77056)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Plane1:visible")
+tracks/6/path = NodePath("PLANE/plane_right:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.00935, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PLANE/plane_right:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("PLANE/plane_left:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.00826, 0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("PLANE/plane_left:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("PLANE:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -397,71 +447,119 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Plane1:position")
+tracks/2/path = NodePath("PLANE:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.798378, 1.35949, 1.94337, 2.43333, 8.74976, 10.0667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.956667, 2.00717, 8.71667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0.290871, 0.0431992, 0.185096), Vector3(0.16497, 0.234464, 0.0951312), Vector3(0.0895058, 0.218239, 0.0443977), Vector3(0.25212, 0.223002, -0.0656512), Vector3(0.134, 0.227, -0.158), Vector3(0.044, 0.227, -0.138), Vector3(0.0654003, 0.153666, -0.396644)]
+"values": [Vector3(0.57815, 0.0742317, -0.0702562), Vector3(0.43, 0.265, -0.07), Vector3(0.304, 0.251, -0.077), Vector3(-0.057, 0.251, -0.077)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Plane1:rotation")
+tracks/3/path = NodePath("PLANE:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(2.41666, 8.74759, 10.0667),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.956667, 2.00717, 8.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(-1.27135, 0, 0)]
+"values": [Vector3(1.5708, 1.5708, 0), Vector3(0, 1.5708, 0), Vector3(0, 1.5708, 0), Vector3(0, 1.5708, 0)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Plane2:position")
+tracks/4/path = NodePath("PLANE/plane_middle:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.8, 1.35204, 1.94337, 2.41666, 8.74976, 10.0667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(3.2, 8.51667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0.291283, 0.0442298, 0.331522), Vector3(0.164, 0.235, 0.24), Vector3(0.09, 0.218, 0.18), Vector3(0.252861, 0.222999, 0.0755779), Vector3(0.134, 0.227, -0.008), Vector3(0.044, 0.227, 0.012), Vector3(0.0725924, 0.0829361, 0.280045)]
+"values": [Vector3(0.000371367, 0, 0), Vector3(0, 0, 1.755)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Plane2:rotation")
+tracks/5/path = NodePath("PLANE/plane_middle:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(1.35204, 2.41666, 8.74759, 10.0667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(3.2, 8.51667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(1.46126, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Plane2:visible")
+tracks/6/path = NodePath("PLANE/plane_middle:scale")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 10.5323),
+"times": PackedFloat32Array(3.2, 8.51667),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
+"update": 0,
+"values": [Vector3(0.00913121, 0.0371422, 1.77056), Vector3(0.009, 0.037, 0)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Plane1:visible")
+tracks/7/path = NodePath("PLANE/plane_right:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 10.5323),
+"times": PackedFloat32Array(8.73667, 10.2467),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.00935, 0, 0), Vector3(2.79418, 0, 0.0652348)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("PLANE/plane_right:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(8.73667, 10.2467),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -1.5708)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("PLANE/plane_left:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(8.73667, 10.2467),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.00826, 0, 0), Vector3(-3.02935, 0, 0.704591)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("PLANE/plane_left:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(8.73667, 10.2467),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.622e-22, 5.97822e-15, 1.5708)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("PLANE:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 11),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -473,33 +571,145 @@ _data = {
 &"machine_on": SubResource("Animation_4gkah")
 }
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fs1dv"]
-albedo_texture = ExtResource("7_cxm0j")
-uv1_scale = Vector3(20, 20, 20)
-uv1_offset = Vector3(1.105, 0.23, -2.955)
-uv1_triplanar_sharpness = 90.5096
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_es537"]
+resource_name = "Royal Oak Wood Veneer"
+cull_mode = 2
+albedo_texture = ExtResource("7_ionc4")
+metallic_texture = ExtResource("8_f6o21")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("8_f6o21")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("9_4e7wx")
+uv1_offset = Vector3(0.4, 0, 0)
 
-[sub_resource type="BoxMesh" id="BoxMesh_ionc4"]
-size = Vector3(0.09, 0.005, 0.055)
+[sub_resource type="ArrayMesh" id="ArrayMesh_adx85"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
+"name": "Royal Oak Wood Veneer",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAD/////AAAAAP//AAD//wAA////////AAD//wAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3je80"]
+resource_name = "PLANE_Cube_001"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("2rb///p1//9s2//f///6dWzb///6dfp12rb/3//////atv/f+nX//2zb/7////p1bNv/3/p1+nXatv+//////9q2/7//////bNv/n/p1+nVs2/+////6ddq2/5/6df//2rb/n/////9s2/9/+nX6dWzb/5////p12rb/f/p1//9Ikv+/+nX6ddq2/5//////2rb/v///+nVIkv+f+nX//2zb/7////p1////n/p1//////+/+nX6dWzb/5//////"),
+"format": 34896613431,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_es537"),
+"name": "Royal Oak Wood Veneer",
+"primitive": 3,
+"uv_scale": Vector4(1.75, 2, 2.16988, 2.16988),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD/////AAAAAFTV////////VNX/////AABU1f//AAD//1TV//8AAP///78AAP//////v/////////+/AAAAAP///78AAAAAAAD/v///AAD///+///8AAAAA/78AAAAA////v/////8AAP//AAD///////8AAP//AAD/////////////VNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq/////////////////////wAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_adx85")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i6w8b"]
+resource_name = "Royal Oak Wood Veneer"
+cull_mode = 2
+albedo_texture = ExtResource("7_ionc4")
+metallic_texture = ExtResource("8_f6o21")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("8_f6o21")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("9_4e7wx")
+uv1_offset = Vector3(0.4, 0, 0)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_5oonm"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
+"name": "Royal Oak Wood Veneer",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAD/////AAAAAP//AAD//wAA////////AAD//wAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cotil"]
+resource_name = "PLANE_Cube_002"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("/1////+f/7//n////1//v/9f/7//n/9//5//v/9f/3//X/9//5//P/+f/3//X/8//1//P/+fAAD/n/8//18AAP8f/3//X/8//1//f/8f/z//n/9//9//P//f/3//n/8/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_i6w8b"),
+"name": "Royal Oak Wood Veneer",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD/////AAAAAFTV////////VNX/////AABU1f//AAD//1TV//8AAP///78AAP//////v/////////+/AAAAAP///78AAAAAAAD/v///AAD///+///8AAAAA/78AAAAA////v/////8AAP//AAD///////8AAP//AAD/////////////VNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq/////////////////////wAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_5oonm")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4y7vp"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
+"name": "Royal Oak Wood Veneer",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAD/////AAAAAP//AAD//wAA////////AAD//wAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cnl3c"]
+resource_name = "PLANE_Cube_003"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("/1////+f/7//n////1//v/9f/7//n/9//5//v/9f/3//X/9//5//P/+f/3//X/8//1//P/+fAAD/n/8//18AAP8f/3//X/8//1//f/8f/z//n/9//9//P//f/3//n/8/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_i6w8b"),
+"name": "Royal Oak Wood Veneer",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD/////AAAAAFTV////////VNX/////AABU1f//AAD//1TV//8AAP///78AAP//////v/////////+/AAAAAP///78AAAAAAAD/v///AAD///+///8AAAAA/78AAAAA////v/////8AAP//AAD///////8AAP//AAD/////////////VNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq/////////////////////wAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_4y7vp")
 
 [node name="PickableObject" instance=ExtResource("1_fjrgs")]
 collision_layer = 1048580
 collision_mask = 1048581
+type = "machine_3"
 
 [node name="CollisionShape3D" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0125848, 0.165161, -0.0170211)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0232302, 0.165161, -0.0173588)
 shape = SubResource("BoxShape3D_fjrgs")
 
-[node name="GrabPointHandLeft" parent="." index="1" instance=ExtResource("3_llosb")]
+[node name="GrabPointHandLeft2" parent="." index="1" instance=ExtResource("3_llosb")]
 transform = Transform3D(0.0156376, 0, 0.999878, 0, 1, 0, -0.999878, 0, 0.0156376, -0.00839593, 0.0585883, 0.191592)
 visible = true
 
-[node name="GrabPointHandRight" parent="." index="2" instance=ExtResource("4_1ut7m")]
+[node name="GrabPointHandRight2" parent="." index="2" instance=ExtResource("4_1ut7m")]
 transform = Transform3D(0.0156376, 0, 0.999878, 0, 1, 0, -0.999878, 0, 0.0156376, -0.0132591, 0.0631864, -0.240949)
 visible = true
 
 [node name="jigsaw_machine_edited" type="Node3D" parent="." index="3"]
-transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0.0660853, 0, -0.0111916)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0660853, 0, -0.0111916)
 
 [node name="Jigsaw machine" type="MeshInstance3D" parent="jigsaw_machine_edited" index="0"]
 mesh = SubResource("ArrayMesh_mh38c")
@@ -547,16 +757,23 @@ parameters/looping = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0762922, 0.248904, -0.0750157)
 stream = ExtResource("6_58u4y")
 
-[node name="Plane1" type="MeshInstance3D" parent="." index="8"]
-transform = Transform3D(2.71, 0, 0, 0, 2.71, 0, 0, 0, 2.71, 0.134083, 0.227253, -0.097876)
+[node name="PLANE" type="Node3D" parent="." index="8"]
+transform = Transform3D(-2.89599e-07, 0, 0.08, 0, 0.08, 0, -0.08, 0, -2.89599e-07, 0.254271, 0.225364, -0.0702562)
 visible = false
-material_override = SubResource("StandardMaterial3D_fs1dv")
-mesh = SubResource("BoxMesh_ionc4")
 
-[node name="Plane2" type="MeshInstance3D" parent="." index="9"]
-transform = Transform3D(2.71, 0, 0, 0, 2.71, 0, 0, 0, 2.71, 0.134083, 0.227253, -0.0430147)
-material_override = SubResource("StandardMaterial3D_fs1dv")
-mesh = SubResource("BoxMesh_ionc4")
+[node name="plane_left" type="MeshInstance3D" parent="PLANE" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.0371422, 0, 0, 0, 1.77056, -1.00826, 0, 0)
+mesh = SubResource("ArrayMesh_3je80")
+skeleton = NodePath("")
 
-[connection signal="highlight_updated" from="." to="." method="_on_highlight_updated"]
+[node name="plane_right" type="MeshInstance3D" parent="PLANE" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.0371422, 0, 0, 0, 1.77056, 1.00935, 0, 0)
+mesh = SubResource("ArrayMesh_cotil")
+skeleton = NodePath("")
+
+[node name="plane_middle" type="MeshInstance3D" parent="PLANE" index="2"]
+transform = Transform3D(0.00913121, 0, 0, 0, 0.0371422, 0, 0, 0, 1.77056, 0.000371367, 0, 0)
+mesh = SubResource("ArrayMesh_cnl3c")
+skeleton = NodePath("")
+
 [connection signal="finished" from="start" to="." method="_on_start_finished"]

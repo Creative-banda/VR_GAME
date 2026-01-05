@@ -51,6 +51,8 @@ tracker = &"right_hand"
 
 [node name="MovementTurn" parent="XRControllerRight" instance=ExtResource("5_kqfn1")]
 turn_mode = 1
+step_turn_delay = 0.1
+step_turn_angle = 10.0
 
 [node name="FunctionPickup" parent="XRControllerRight" instance=ExtResource("3_fgi4x")]
 

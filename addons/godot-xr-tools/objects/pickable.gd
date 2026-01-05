@@ -13,7 +13,9 @@ extends RigidBody3D
 ## Grab-points can be defined by adding different types of [XRToolsGrabPoint]
 ## child nodes controlling hand and snap-zone grab locations.
 
+@export var type: String
 
+var isDoorOpen = false
 # Signal emitted when this object is picked up (held by a player or snap-zone)
 signal picked_up(pickable)
 
@@ -437,7 +439,6 @@ func _set_ranged_grab_method(new_value: int) -> void:
 	ranged_grab_method = new_value
 	can_ranged_grab = new_value != RangedMethod.NONE
 
-
 func pointer_event(event: XRToolsPointerEvent):
 	# event.pointer is the FunctionPointer node
 	# Usually, the parent of the FunctionPointer is the XRController3D
@@ -446,10 +447,13 @@ func pointer_event(event: XRToolsPointerEvent):
 	# 2. To check for a SPECIFIC button (e.g., Grip or AX) 
 	# even if it's not the pointer's main action:
 	if controller and controller.is_button_pressed("trigger_click"):
-		run_my_special_function()
+		if type == "machine_3":
+			run_machine_3()
+		elif type == "door":
+			run_door()
 
 
-func run_my_special_function():
+func run_machine_3():
 	if $AnimationPlayer.is_playing():
 		return
 	$AnimationPlayer.play("machine_on")
@@ -463,3 +467,12 @@ func _on_start_finished() -> void:
 func end_audio():
 	$mid.stop()
 	$end.play()
+
+func run_door():
+	if $AnimationPlayer.is_playing():
+		return
+	if isDoorOpen:
+		$AnimationPlayer.play("door_close")
+	else:
+		$AnimationPlayer.play("door_open")
+	isDoorOpen = !isDoorOpen

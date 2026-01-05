@@ -14,9 +14,25 @@ sky_material = SubResource("PanoramaSkyMaterial_r0j7t")
 [sub_resource type="Environment" id="Environment_4gohe"]
 background_mode = 2
 sky = SubResource("Sky_s382v")
-sky_rotation = Vector3(0, -1.55334, 0)
-tonemap_mode = 2
-glow_enabled = true
+sky_rotation = Vector3(0, -4.19752, 0)
+ambient_light_source = 3
+tonemap_mode = 1
+tonemap_exposure = 0.75
+tonemap_white = 16.0
+ssao_radius = 2.15
+ssao_intensity = 3.95
+ssao_power = 1.60766
+ssao_detail = 5.0
+ssao_horizon = 0.0
+ssao_sharpness = 1.0
+ssil_radius = 12.3
+ssil_intensity = 1.15
+ssil_sharpness = 0.13
+fog_light_energy = 0.5
+fog_sun_scatter = 3.1
+fog_aerial_perspective = 0.425
+fog_sky_affect = 0.18
+adjustment_saturation = 1.7
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_s382v")
@@ -30,7 +46,33 @@ shadow_enabled = true
 environment = SubResource("Environment_4gohe")
 
 [node name="XROrigin3D" parent="." instance=ExtResource("2_s382v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0379062, 1.3257, -0.936204)
+transform = Transform3D(-0.856357, 0, -0.516384, 0, 1, 0, 0.516384, 0, -0.856357, 2.10573, 1.66178, -0.787808)
 
 [node name="DIY_LAB_V2" parent="." instance=ExtResource("4_s382v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00736392, 0.00207567, 0.0036993)
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.45237, 3.51704, 1.26718)
+shadow_enabled = true
+spot_range = 6.36
+spot_attenuation = -1.85
+spot_angle = 26.1
+spot_angle_attenuation = 2.46229
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.96288, 3.52953, 1.26718)
+shadow_enabled = true
+spot_range = 6.39
+spot_attenuation = -2.8
+spot_angle = 31.95
+spot_angle_attenuation = 10.9283
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.04809, 3.52953, -2.16483)
+shadow_enabled = true
+spot_range = 6.39
+spot_attenuation = -2.8
+spot_angle = 31.95
+spot_angle_attenuation = 10.9283
