@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://c411361n6u383"]
+[gd_scene load_steps=9 format=3 uid="uid://c411361n6u383"]
 
 [ext_resource type="Script" uid="uid://datxejm6u05l1" path="res://scens/main.gd" id="1_s382v"]
 [ext_resource type="Texture2D" uid="uid://qjlm4dtqv0yl" path="res://assets/hdri.png" id="2_3ioej"]
 [ext_resource type="PackedScene" uid="uid://dwpd1uvyy52id" path="res://scens/xr_origin_3d.tscn" id="2_s382v"]
 [ext_resource type="PackedScene" uid="uid://b3f3irgygunn7" path="res://diy_lab.tscn" id="4_s382v"]
+[ext_resource type="PackedScene" uid="uid://dslq48hw3h033" path="res://assets/DIY/AC.glb" id="5_4gohe"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_r0j7t"]
 panorama = ExtResource("2_3ioej")
@@ -46,23 +47,25 @@ shadow_enabled = true
 environment = SubResource("Environment_4gohe")
 
 [node name="XROrigin3D" parent="." instance=ExtResource("2_s382v")]
-transform = Transform3D(-0.856357, 0, -0.516384, 0, 1, 0, 0.516384, 0, -0.856357, 2.10573, 1.66178, -0.787808)
+transform = Transform3D(0.983054, 0, 0.183317, 0, 1, 0, -0.183317, 0, 0.983054, 0.652285, 1.66178, 0.279473)
 
 [node name="DIY_LAB_V2" parent="." instance=ExtResource("4_s382v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00736392, 0.00207567, 0.0036993)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00774348, 0.00207567, 0.0045681)
 
 [node name="Lights" type="Node3D" parent="."]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.45237, 3.51704, 1.26718)
 shadow_enabled = true
-spot_range = 6.36
-spot_attenuation = -1.85
-spot_angle = 26.1
+shadow_blur = 10.0
+spot_range = 9.665
+spot_attenuation = -1.4
+spot_angle = 36.45
 spot_angle_attenuation = 2.46229
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.96288, 3.52953, 1.26718)
+light_energy = 1.48
 shadow_enabled = true
 spot_range = 6.39
 spot_attenuation = -2.8
@@ -71,8 +74,18 @@ spot_angle_attenuation = 10.9283
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.04809, 3.52953, -2.16483)
+light_energy = 1.515
+light_indirect_energy = 2.845
+light_volumetric_fog_energy = 2.28
+light_bake_mode = 1
 shadow_enabled = true
 spot_range = 6.39
 spot_attenuation = -2.8
 spot_angle = 31.95
 spot_angle_attenuation = 10.9283
+
+[node name="Sketchfab_Scene" parent="Lights" instance=ExtResource("5_4gohe")]
+transform = Transform3D(-0.000226899, 0, 1, 0, 1, 0, -1, 0, -0.000226899, -6.58969, 3.71256, 1.16707)
+
+[node name="Sketchfab_Scene2" parent="Lights" instance=ExtResource("5_4gohe")]
+transform = Transform3D(-0.000226899, 0, 1, 0, 1, 0, -1, 0, -0.000226899, -6.58969, 3.71256, -3.28207)

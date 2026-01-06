@@ -1,10 +1,12 @@
-[gd_scene load_steps=19 format=4 uid="uid://m3oxkdlvd6g1"]
+[gd_scene load_steps=21 format=4 uid="uid://m3oxkdlvd6g1"]
 
 [ext_resource type="Script" uid="uid://b1j5i0exfj3w2" path="res://scens/door.gd" id="1_1kb14"]
 [ext_resource type="Texture2D" uid="uid://dv10m7e0qkkc0" path="res://assets/DIY/DIY_LAB_V2_Image_1_37.png" id="2_y7k14"]
 [ext_resource type="Texture2D" uid="uid://cgod58gj02uqf" path="res://assets/DIY/DIY_LAB_V2_Image_0_38.jpg" id="3_q8clj"]
 [ext_resource type="Texture2D" uid="uid://bnauitmnmdy6h" path="res://assets/DIY/DIY_LAB_V2_Image_2_39.jpg" id="4_3r6ld"]
 [ext_resource type="Texture2D" uid="uid://bcje2si8uwkp7" path="res://assets/DIY/DIY_LAB_V2_wooden_table.jpg" id="5_ldsbw"]
+[ext_resource type="AudioStream" uid="uid://c26np08rlq2fl" path="res://assets/sounds/door_open.mp3" id="6_q8clj"]
+[ext_resource type="AudioStream" uid="uid://3y6jej0cik0g" path="res://assets/sounds/door-close-79921.mp3" id="7_3r6ld"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_crnfl"]
 size = Vector3(0.0465012, 0.247589, 1.35681)
@@ -38,7 +40,7 @@ roughness = 0.6
 resource_name = "glass_texture"
 transparency = 4
 cull_mode = 2
-albedo_color = Color(0.906332, 0.906332, 0.906332, 0.336364)
+albedo_color = Color(0.687216, 0.687215, 0.687214, 0.336364)
 metallic = 0.445455
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hdf1a"]
@@ -200,58 +202,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_pylgi")
 
-[sub_resource type="Animation" id="Animation_1kb14"]
-resource_name = "door_open"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Object_6_002:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Object_6_002:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 1.309, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CollisionShape3D:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.25205, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.0309944, -0.0779419, -0.582616), Vector3(-0.393, -0.076, -0.44), Vector3(-0.585, -0.075, -0.123)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("CollisionShape3D:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.25205, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-1.5708, 0, 0), Vector3(-1.5708, 0.653573, 0), Vector3(-1.5708, 1.29652, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_y7k14"]
 length = 0.001
 tracks/0/type = "value"
@@ -355,6 +305,58 @@ tracks/3/keys = {
 "values": [Vector3(0, 1.309, 0), Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_1kb14"]
+resource_name = "door_open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Object_6_002:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Object_6_002:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.309, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25205, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0309944, -0.0779419, -0.582616), Vector3(-0.393, -0.076, -0.44), Vector3(-0.585, -0.075, -0.123)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionShape3D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.25205, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0), Vector3(-1.5708, 0.653573, 0), Vector3(-1.5708, 1.29652, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q8clj"]
 _data = {
 &"RESET": SubResource("Animation_y7k14"),
@@ -369,7 +371,7 @@ collision_mask = 1048577
 script = ExtResource("1_1kb14")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.031, -0.078, -0.591)
+transform = Transform3D(1, 0, 0, 0, -3.61999e-06, 1, 0, -1, -3.61999e-06, -0.031, -0.078, -0.591)
 shape = SubResource("BoxShape3D_crnfl")
 
 [node name="Object_6_002" type="MeshInstance3D" parent="."]
@@ -381,3 +383,9 @@ skeleton = NodePath("")
 libraries = {
 &"": SubResource("AnimationLibrary_q8clj")
 }
+
+[node name="open" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_q8clj")
+
+[node name="close" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("7_3r6ld")

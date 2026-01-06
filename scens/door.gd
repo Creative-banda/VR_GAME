@@ -17,6 +17,8 @@ func pointer_event(event: XRToolsPointerEvent):
 func run_door():
 	if is_door_open:
 		$AnimationPlayer.play("door_close")
+		$open.play()
 	else:
 		$AnimationPlayer.play("door_open")
+		$close.play()
 	is_door_open = !is_door_open

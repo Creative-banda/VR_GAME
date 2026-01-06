@@ -62,6 +62,7 @@ active_button_action = "trigger"
 show_laser = 2
 laser_length = 1
 show_target = true
+target_radius = 0.01
 
 [node name="MovementCrouch" parent="XRControllerRight" instance=ExtResource("4_x2vy5")]
 crouch_button_action = "ax_button"
