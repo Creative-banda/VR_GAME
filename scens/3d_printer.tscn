@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=4 uid="uid://cakxucw5cjg4h"]
+[gd_scene load_steps=73 format=4 uid="uid://cakxucw5cjg4h"]
 
 [ext_resource type="Texture2D" uid="uid://cdc6kfvvb1ruv" path="res://assets/DIY/3d-printer_Image_0.png" id="1_1u42e"]
 [ext_resource type="Script" uid="uid://t6rjpixfm8pq" path="res://scens/printer.gd" id="1_f4rhf"]
@@ -11,17 +11,6 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sfwex"]
 size = Vector3(4.62207, 3.75189, 3.38245)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_f4rhf"]
-render_priority = 0
-shader = ExtResource("5_mwx1i")
-shader_parameter/cutoff_y = 0.0
-shader_parameter/filament_color = Color(0.1, 0.6, 1, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_1u42e"]
-material = SubResource("ShaderMaterial_f4rhf")
-radius = 0.2
-height = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sfwex"]
 render_priority = 0
@@ -1396,12 +1385,7 @@ script = ExtResource("1_f4rhf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0151367, 1.88272, 0.468978)
-visible = false
 shape = SubResource("BoxShape3D_sfwex")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.79105, 0.725518)
-mesh = SubResource("CapsuleMesh_1u42e")
 
 [node name="model_1" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -0.168278, 1.35729, 0.720118)
