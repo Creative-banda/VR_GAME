@@ -1,39 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://c411361n6u383"]
+[gd_scene load_steps=5 format=3 uid="uid://c411361n6u383"]
 
 [ext_resource type="Script" uid="uid://datxejm6u05l1" path="res://scens/main.gd" id="1_s382v"]
-[ext_resource type="Texture2D" uid="uid://qjlm4dtqv0yl" path="res://assets/hdri.png" id="2_3ioej"]
 [ext_resource type="PackedScene" uid="uid://dwpd1uvyy52id" path="res://scens/xr_origin_3d.tscn" id="2_s382v"]
 [ext_resource type="PackedScene" uid="uid://b3f3irgygunn7" path="res://diy_lab.tscn" id="4_s382v"]
 [ext_resource type="PackedScene" uid="uid://dslq48hw3h033" path="res://assets/DIY/AC.glb" id="5_4gohe"]
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_r0j7t"]
-panorama = ExtResource("2_3ioej")
-
-[sub_resource type="Sky" id="Sky_s382v"]
-sky_material = SubResource("PanoramaSkyMaterial_r0j7t")
-
-[sub_resource type="Environment" id="Environment_4gohe"]
-background_mode = 2
-sky = SubResource("Sky_s382v")
-sky_rotation = Vector3(0, -4.19752, 0)
-ambient_light_source = 3
-tonemap_mode = 1
-tonemap_exposure = 0.75
-tonemap_white = 16.0
-ssao_radius = 2.15
-ssao_intensity = 3.95
-ssao_power = 1.60766
-ssao_detail = 5.0
-ssao_horizon = 0.0
-ssao_sharpness = 1.0
-ssil_radius = 12.3
-ssil_intensity = 1.15
-ssil_sharpness = 0.13
-fog_light_energy = 0.5
-fog_sun_scatter = 3.1
-fog_aerial_perspective = 0.425
-fog_sky_affect = 0.18
-adjustment_saturation = 1.7
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_s382v")
@@ -42,9 +12,6 @@ script = ExtResource("1_s382v")
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 2.76484, 0)
 visible = false
 shadow_enabled = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_4gohe")
 
 [node name="XROrigin3D" parent="." instance=ExtResource("2_s382v")]
 transform = Transform3D(0.983054, 0, 0.183317, 0, 1, 0, -0.183317, 0, 0.983054, 0.652285, 1.66178, 0.279473)
@@ -89,3 +56,8 @@ transform = Transform3D(-0.000226899, 0, 1, 0, 1, 0, -1, 0, -0.000226899, -6.589
 
 [node name="Sketchfab_Scene2" parent="Lights" instance=ExtResource("5_4gohe")]
 transform = Transform3D(-0.000226899, 0, 1, 0, 1, 0, -1, 0, -0.000226899, -6.58969, 3.71256, -3.28207)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.76432, -1.85353)
+omni_range = 8.72
+omni_attenuation = 0.35

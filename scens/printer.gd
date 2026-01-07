@@ -14,7 +14,7 @@ extends Node3D
 var colors = [Color.RED, Color.BLUE, Color.BLACK]
 var color_index: int = 0
 
-var current_index: int = 0 # 0 = model_1, 1 = model_2, 2 = model_3
+var current_index: int = 100 # 0 = model_1, 1 = model_2, 2 = model_3
 var current_model: MeshInstance3D
 var can_press: bool = true
 
@@ -30,6 +30,8 @@ func _process(_delta):
 			mat.set_shader_parameter("cutoff_y", current_height)
 
 func update_model_selection():
+	if current_index  == 100:
+		return
 	current_model = models[current_index]
 	
 	for i in range(models.size()):
